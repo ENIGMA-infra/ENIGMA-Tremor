@@ -1,3 +1,3 @@
 # Useful information for new sites
 
-Interested in joining XYZ WG? Send us an email at mywg@email.org!
+Interested in joining ENIGMA-Tremor? Send us an email at m.laansma@amsterdamumc.nl!
