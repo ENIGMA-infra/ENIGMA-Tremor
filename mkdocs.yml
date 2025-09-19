@@ -4,7 +4,7 @@ theme:
   logo: assets/logos/enigma_300DPI_small.png
   favicon: assets/logos/enigma_300DPI_small.png
   palette:
-    primary: teal
+    primary: light green
   
 
 features:
