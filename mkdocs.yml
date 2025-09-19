@@ -1,0 +1,36 @@
+site_name: Your Working group Documentation
+theme:
+  name: material
+  logo: assets/logos/enigma_300DPI_small.png
+  favicon: assets/logos/enigma_300DPI_small.png
+  palette:
+    primary: teal
+  
+
+features:
+  - navigation.indexes
+
+nav:
+  - Welcome: index.md
+
+  - About XYZ WG:    
+    - Core team: working_group/team.md
+    - Sites: working_group/existing_sites.md
+    - Join us: working_group/join_us.md
+    
+  - Projects:    
+    - Ongoing: projects/ongoing/overview.md
+    - Completed: projects/completed/overview.md
+    - Propose a project: projects/propose_a_project.md
+
+  - Resources:
+    - How-to guides: resources/how_to_guides/overview.md
+    - Tools: resources/tools/overview.md
+
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
