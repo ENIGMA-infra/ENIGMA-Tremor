@@ -1,6 +1,6 @@
-# Welcome to the ENIGMA-PD documentation page
+# Welcome to the ENIGMA-Tremor documentation page
 
-The [ENIGMA Consortium](https://enigma.ini.usc.edu/about-2/) is an international effort by leaders worldwide. This site provides information on the XYZ WG team, ongoing and completed projects, and useful resources.  
+The [ENIGMA Consortium](https://enigma.ini.usc.edu/about-2/) is an international effort by leaders worldwide. This site provides information on the ENIGMA-Tremor team, ongoing and completed projects, and useful resources.  
 
 <div class="grid cards" markdown>
 
