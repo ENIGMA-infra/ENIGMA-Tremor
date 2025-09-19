@@ -1,3 +1,0 @@
-# Example project page
-
-Description.
