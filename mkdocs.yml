@@ -1,4 +1,4 @@
-site_name: Your Working group Documentation
+site_name: ENGIMA-Tremor Documentation
 theme:
   name: material
   logo: assets/logos/enigma_300DPI_small.png
@@ -13,7 +13,7 @@ features:
 nav:
   - Welcome: index.md
 
-  - About XYZ WG:    
+  - About ENIGMA-Tremor:    
     - Core team: working_group/team.md
     - Sites: working_group/existing_sites.md
     - Join us: working_group/join_us.md
