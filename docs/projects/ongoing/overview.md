@@ -1,3 +1,3 @@
 # Overview of ongoing projects
 
-- [Example Project](./example_active_project.md)
+- [Example Project](./Cortical_Subcortical_Cerebellum_Morphology_Project.md)
