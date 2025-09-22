@@ -1,4 +1,4 @@
-# Welcome to the ENIGMA-Tremo Repository!
+# Welcome to the ENIGMA-Tremor Repository!
 
 The ENIGMA-Tremor Working Group is one of the newest working groups, focused on essential tremor! 
 
