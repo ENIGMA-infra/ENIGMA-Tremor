@@ -1,6 +1,6 @@
 # Welcome to the ENIGMA-Tremor Repository!
 
-Mixed findings between individual neuroimaging studies on tremor underline the disease heterogeneity, the differences in applied methodology and the low statistical power due to small samples (Hopfner et al., 2016). The ENIGMA Consortium has established successful collaborations to overcome these limitations by pooling retrospective MRI and genetics data from various sites worldwide using harmonized protocols, resulting in well-powered analyses with representative samples (Thompson et al., 2020). Building on this experience, we now seek collaborators to establish the ENIGMA-Tremor working group.
+Mixed findings between individual neuroimaging studies on tremor underline the disease heterogeneity, the differences in applied methodology and the low statistical power due to small samples (Hopfner et al., 2016). The ENIGMA Consortium has established successful collaborations to overcome these limitations by pooling retrospective MRI and genetics data from various sites worldwide using harmonized protocols, resulting in well-powered analyses with representative samples (Thompson et al., 2020). Building on this experience, we have established the ENIGMA-Tremor working group.
 
 Purpose and Working Group Goals:
 ENIGMA-Tremor aims to leverage existing neuroimaging and genetics data from cohorts around the world to identify, characterize and explain how brain alterations are linked to tremor symptoms, subtypes and disease progression. More specifically, we aim to:
