@@ -20,7 +20,6 @@ nav:
     
   - Projects:    
     - Ongoing: projects/ongoing/overview.md
-      - Cortical-Subcortical-Cerebellum: projects/ongoing/Cortical_Subcortical_Cerebellum_Morphology_Project.md
     - Completed: projects/completed/overview.md
     - Propose a project: projects/propose_a_project.md
 
