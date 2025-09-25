@@ -1,12 +1,12 @@
 # Welcome to the ENIGMA-Tremor documentation page
 
-The [ENIGMA Consortium](https://enigma.ini.usc.edu/about-2/) is an international effort by leaders worldwide. This site provides information on the ENIGMA-Tremor team, ongoing and completed projects, and useful resources.  
+The [ENIGMA Consortium](https://enigma.ini.usc.edu/about-2/) is an international effort by leaders worldwide. This site provides information on [the ENIGMA-Tremor team](https://enigma.ini.usc.edu/ongoing/enigma-tremor/), ongoing and completed projects, and useful resources.  
 
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-people-group:{ .lg .middle } __Team__
 
-    [:octicons-arrow-right-24: The people behind XYZ WG](working_group/team.md)
+    [:octicons-arrow-right-24: The people behind ENIGMA-Tremor](working_group/team.md)
 
 - :fontawesome-solid-hospital-wide:{ .lg .middle } __Sites__
 
