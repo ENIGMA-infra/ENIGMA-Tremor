@@ -10,7 +10,7 @@ To help motivate and monitor each site's progress, we maintain a leaderboard tha
 
 ## Overview
 The figure shows the expected outcomes and corresponding processing steps - most of which can be performed using the Nipoppy framework and helper Python package. We strongly recommend adoption of Nipoppy tools to simplify coordination and ensure reproducibility of this end-to-end process across all sites. 
-![enigma-nipoppy-FS7-upgrade-overview](https://github.com/user-attachments/assets/aae8449c-58cf-4889-92de-979f79082e28)
+![enigma-nipoppy-FS7-cerebnet-overview](docs/assets/enigma-nipoppy-rollout-plan-enigma-tremor-fs7-fastsurfer_cerebnet-overview.jpg)
 
 ## Setting up Nipoppy
 Nipoppy is a lightweight framework for standardized data organization and processing of neuroimaging-clinical datasets. Its goal is to help users adopt the [FAIR principles](https://www.go-fair.org/fair-principles/) and improve the reproducibility of studies. 
@@ -272,7 +272,7 @@ You can find the updated ENIGMA-PD QC instructions for visual inspection [here](
 
 ---
 
-## Running the Fastsurfer cerebellum segmentations using CerebNet
+## Running the cerebellum segmentations using CerebNet
 The protocol is being finalized and will be added soon!
 
 ---
