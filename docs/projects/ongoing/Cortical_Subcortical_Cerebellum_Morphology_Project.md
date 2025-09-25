@@ -10,7 +10,8 @@ To help motivate and monitor each site's progress, we maintain a leaderboard tha
 
 ## Overview
 The figure shows the expected outcomes and corresponding processing steps - most of which can be performed using the Nipoppy framework and helper Python package. We strongly recommend adoption of Nipoppy tools to simplify coordination and ensure reproducibility of this end-to-end process across all sites. 
-![enigma-nipoppy-FS7-cerebnet-overview](../../../docs/assets/enigma-nipoppy-rollout-plan-enigma-tremor-fs7-fastsurfer_cerebnet-overview.jpg)
+
+![enigma-nipoppy-rollout-plan-enigma-tremor-fs7-fastsurfer_cerebnet-overview](../../../docs/assets/enigma-nipoppy-rollout-plan-enigma-tremor-fs7-fastsurfer_cerebnet-overview.jpg)
 
 ## Setting up Nipoppy
 Nipoppy is a lightweight framework for standardized data organization and processing of neuroimaging-clinical datasets. Its goal is to help users adopt the [FAIR principles](https://www.go-fair.org/fair-principles/) and improve the reproducibility of studies. 
