@@ -2,13 +2,15 @@
 
 This page is created to guide collaborating ENIGMA-Tremor sites through this project's processing steps. The outcomes include cortical thickness, cortical surface area, volume of subcortical regions and their subfields, and volume of cerebellum subdivisions. All steps and code required are combined into the guidelines presented here. NOTE: the cerebellum volume extraction protocol is being finalized and will be added soon. If you have any questions, concerns, or issues, please contact the ENIGMA-Tremor core team at m.laansma@amsterdamumc.nl. 
 
-## Expression of interest to participate with your site data
+## Before you start
+
+### Expression of interest to participate with your site data
 Please fill out the [EOI form](https://forms.gle/fDZg9uQQqfxPVURX6) to express your interest to participate in the project and we will reach out to you.
 
-## Leaderboard
+### Leaderboard
 To help motivate and monitor each site's progress, we maintain a leaderboard that outlines all the steps detailed in these guidelines. If you are in charge of data processing at your site, please request access and regularly update your progress on the current steps on the [ENIGMA-Tremor Leaderboard](https://docs.google.com/spreadsheets/d/1eYlLcxH7ET17Nr1wskm55SLVEqAoaBod_r1zIid9FSk/edit?usp=sharing).
 
-## Overview
+### Overview
 The figure shows the expected outcomes and corresponding processing steps - most of which can be performed using the Nipoppy framework and helper Python package. We strongly recommend adoption of Nipoppy tools to simplify coordination and ensure reproducibility of this end-to-end process across all sites. 
 
 ![enigma-nipoppy-rollout-plan-enigma-tremor-fs7-fastsurfer_cerebnet-overview](https://github.com/user-attachments/assets/918aab71-769b-4bd4-981f-d5c49b317081)
