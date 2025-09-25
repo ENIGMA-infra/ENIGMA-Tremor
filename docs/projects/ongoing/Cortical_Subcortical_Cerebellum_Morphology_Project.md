@@ -1,6 +1,6 @@
 # Welcome to the ENIGMA-Tremor Cortical/Subcortical/Cerebellum Morphology Project guidelines!
 
-This page is created to guide collaborating ENIGMA-Tremor sites through the FreeSurfer processing steps. The outcomes include cortical thickness, cortical surface area, and volume of subcortical regions and their subfields. All steps and code required are combined into the guidelines presented here. If you have any questions, concerns, or issues, please contact the ENIGMA-Tremor core team at m.laansma@amsterdamumc.nl. 
+This page is created to guide collaborating ENIGMA-Tremor sites through this project's processing steps. The outcomes include cortical thickness, cortical surface area, volume of subcortical regions and their subfields, and volume of cerebellum subdivisions. All steps and code required are combined into the guidelines presented here. NOTE: the cerebellum volume extraction protocol is being finalized and will be added soon. If you have any questions, concerns, or issues, please contact the ENIGMA-Tremor core team at m.laansma@amsterdamumc.nl. 
 
 ## Expression of interest to participate with your site data
 Please fill out the [EOI form](https://forms.gle/fDZg9uQQqfxPVURX6) to express your interest to participate in the project and we will reach out to you.
@@ -269,6 +269,11 @@ and checking `processing_status.tsv` under the `derivatives` folder.
 Quality checking is essential to make sure the output that you have produced is accurate and reliable. Even small errors or artifacts in images can lead to big mistakes in analysis and interpretation, so careful checks help us to verify whether we can savely include a certain region of interest or participant in our analysis. For the FreeSurfer output, we will follow standardized ENIGMA instructions on how to decide on the quality of the cortical and subcortical segmentations. **At this stage, visual quality assessment of the subsegmentations (e.g., thalamic or hippocampal nuclei) is not required, as there are no established protocols yet and the process would be highly time-consuming; statistical checks (e.g., outlier detection) can be used instead. This may be followed up at a later stage, once there is a project that specifically focuses on these outcomes and the necessary anatomical expertise is available to develop a dedicated quality control manual.**
 
 You can find the updated ENIGMA-PD QC instructions for visual inspection [here](../resources/ENIGMA-PD_visual_QC_instructions.md).
+
+---
+
+## Running the Fastsurfer cerebellum segmentations using CerebNet
+The protocol is being finalized and will be added soon!
 
 ---
 
