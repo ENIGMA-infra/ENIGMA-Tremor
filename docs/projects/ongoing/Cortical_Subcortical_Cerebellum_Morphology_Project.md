@@ -25,20 +25,20 @@ For more information, see the [Nipoppy documentation](https://nipoppy.readthedoc
 ## 2a) Running FreeSurfer 7: [Link to instructions]()
 When you reach this point, the hardest part is behind you and we can finally come to the real stuff. We will run FreeSurfer 7 through fMRIPrep using Nipoppy. See [here](https://nipoppy.readthedocs.io/en/latest/how_to_guides/user_guide/processing.html) for additional information about running processing pipelines with Nipoppy.
 
-###Part 1: Cortical and subcortical segmentations
+### Part 1: Cortical and subcortical segmentations
 We will apply the FreeSurfer functionalities that are included in the fMRIPrep pipeline. We assume here that you have Apptainer installed as your container platform (see [here](../resources/Container_platforms.md) for more info and how to get it).
 
-###Part 2: Subsegmentations
+### Part 2: Subsegmentations
 The subsegmentations pipeline is now ready to be run! Since you’ve all just been through fMRIPrep in Nipoppy, this next step will feel familiar as running this pipeline follows a very similar workflow.
 
-*About the pipeline:*
+**About the pipeline:**
 This pipeline uses existing FreeSurfer 7 functionalities to extract subnuclei volumes from subcortical regions like the *thalamus*, *hippocampus*, *brainstem*, *hypothalamus*, *amygdala*, and *hippocampus*. It requires completed FreeSurfer output (`recon-all`) and integrates the subsegmentation outputs directly into the existing `/mri` and `/stats` directories. Additionally, the pipeline will perform [Sequence Adaptive Multimodal SEGmentation (SAMSEG)](https://surfer.nmr.mgh.harvard.edu/fswiki/Samseg) on T1w images in order to calculate a superior intracranial volume.
 
 ## 2b) Quality Assessment: [Link to instructions]()
-**Part 1: Running the FS-QC toolbox**
+### Part 1: Running the FS-QC toolbox
 Congratulations, you made it to the quality assessment! For this purpose, we will use FreeSurfer Quality Control (FS-QC) toolbox. The [FS-QC toolbox](https://github.com/Deep-MI/fsqc) takes existing FreeSurfer (or FastSurfer) output and computes a set of quality control metrics. These will be reported in a summary table and/or .html page with screenshots to allow for visual inspection of the segmentations.
 
-**Part 2: Performing a visual quality assessment**
+### Part 2: Performing a visual quality assessment
 Quality checking is essential to make sure the output that you have produced is accurate and reliable. Even small errors or artifacts in images can lead to big mistakes in analysis and interpretation, so careful checks help us to verify whether we can savely include a certain region of interest or participant in our analysis. For the FreeSurfer output, we will follow standardized ENIGMA instructions on how to decide on the quality of the cortical and subcortical segmentations.
 
 **At this stage, visual quality assessment of the subsegmentations (e.g., thalamic or hippocampal nuclei) is not required, as there are no established protocols yet and the process would be highly time-consuming; statistical checks (e.g., outlier detection) can be used instead. This may be followed up at a later stage, once there is a project that specifically focuses on these outcomes and the necessary anatomical expertise is available to develop a dedicated quality control manual.**
@@ -47,7 +47,6 @@ You can find the updated ENIGMA-PD QC instructions for visual inspection [here](
 
 ## 3) Running the cerebellum segmentations using CerebNet
 The protocol is being finalized and will be added soon!
-
 ![under-construction-sign-warning-sign-under-construction-yellow-triangle-sign-with-crossed-hammer-and-wrench-icon-inside-caution-at-the-construction-site-workers-machinery-and-other-obstacles-vector](https://github.com/user-attachments/assets/53a9e950-a9a8-4038-bd2c-8cec82df7844){ width="80" }
 
 ## 4) Data sharing
