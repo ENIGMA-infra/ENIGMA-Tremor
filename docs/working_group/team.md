@@ -1,6 +1,6 @@
-# XYZ WG Core Team
+# ENIGMA-Tremor Core Team
 
-Meet the people behind XYZ WG!
+Meet the people behind ENIGMA-Tremor!
 
 <!-- 
 The section below uses a special mix of markdown and HTML to make pretty cards.
@@ -13,6 +13,15 @@ COPY THIS TO ADD ANOTHER PERSON:
 
  -->
 <div class="grid cards" markdown>
+
+- ![Max](../assets/profile_pictures/Max.jpeg){ width="80" } **[Member One](https://pure.amsterdamumc.nl/en/persons/max-laansma)**  
+  City University, The Country
+
+- ![Arthur](../assets/profile_pictures/Arthur.jpeg){ width="80" } **[Member One](https://www.amsterdamumc.org/en/research/researchers/arthur-buijink.htm)**  
+  City University, The Country
+
+- ![Rick](../assets/profile_pictures/Rick.jpeg){ width="80" } **[Member One](https://www.ru.nl/personen/helmich-r)**  
+  City University, The Country
 
 - ![Paul](../assets/profile_pictures/paul.jpeg){ width="80" } **[Paul Thompson](https://keck.usc.edu/faculty-search/paul-m-thompson/)**  
   University of Southern California, USA
