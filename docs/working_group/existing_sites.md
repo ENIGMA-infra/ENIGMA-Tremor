@@ -1,10 +1,21 @@
-# Global sites in XYZ WG
+# Global sites in ENGIMA-Tremor
 
 ## Site Locations
 
 <div class="grid cards" markdown>
 
-- **City 1**
-- **City 2**
+- **Amsterdam**
+- **Nijmegen**
+- **Singapore**
+- **Groningen**
+- **Graz**
+- **Paris**
+- **Rome**
+- **Bonn**
+- **Cologne**
+- **Catanzaro**
+- **Cambridge MA**
+- **Los Angeles**
+- **Providence**
 
 </div>
