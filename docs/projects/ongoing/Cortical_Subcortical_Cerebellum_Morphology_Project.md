@@ -2,7 +2,7 @@
 
 This page is created to guide collaborating ENIGMA-Tremor sites through this project's processing steps. The outcomes include cortical thickness, cortical surface area, volume of subcortical regions and their subfields, and volume of cerebellum subdivisions. All steps and code required are combined into the guidelines presented here. If you have any questions, concerns, or issues, please contact the ENIGMA-Tremor core team at m.laansma@amsterdamumc.nl. 
 
-**NOTE: the cerebellum volume extraction protocol using CerebNet is being finalized and will be added soon. You can start with the first 3 steps detailed below.** 
+**NOTE: the cerebellum volume extraction protocol using CerebNet (step 3) is being finalized and will be added soon. You can start with the first 2 steps detailed below.** 
 
 ## Before you start
 
