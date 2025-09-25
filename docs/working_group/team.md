@@ -14,14 +14,14 @@ COPY THIS TO ADD ANOTHER PERSON:
  -->
 <div class="grid cards" markdown>
 
-- ![Max](../assets/profile_pictures/Max.jpeg){ width="80" } **[Member One](https://pure.amsterdamumc.nl/en/persons/max-laansma)**  
-  City University, The Country
+- ![Max](../assets/profile_pictures/Max.jpg){ width="80" } **[Member One](https://pure.amsterdamumc.nl/en/persons/max-laansma)**  
+  Amsterdam UMC, The Netherlands
 
-- ![Arthur](../assets/profile_pictures/Arthur.jpeg){ width="80" } **[Member One](https://www.amsterdamumc.org/en/research/researchers/arthur-buijink.htm)**  
-  City University, The Country
+- ![Arthur](../assets/profile_pictures/Arthur.jpg){ width="80" } **[Member One](https://www.amsterdamumc.org/en/research/researchers/arthur-buijink.htm)**  
+  Amsterdam UMC, The Netherlands
 
-- ![Rick](../assets/profile_pictures/Rick.jpeg){ width="80" } **[Member One](https://www.ru.nl/personen/helmich-r)**  
-  City University, The Country
+- ![Rick](../assets/profile_pictures/Rick.jpg){ width="80" } **[Member One](https://www.ru.nl/personen/helmich-r)**  
+  Donders Institute Nijmegen, The Netherlands
 
 - ![Paul](../assets/profile_pictures/paul.jpeg){ width="80" } **[Paul Thompson](https://keck.usc.edu/faculty-search/paul-m-thompson/)**  
   University of Southern California, USA
