@@ -4,7 +4,7 @@ This page is created to guide collaborating ENIGMA-Tremor sites through this pro
 
 **NOTE: the cerebellum volume extraction protocol using CerebNet (step 3) is being finalized and will be added soon. You can start with the first 2 steps detailed below.** 
 
-## Before you start
+## **Before you start**
 
 ### Expression of interest to participate with your site data
 Please fill out the [EOI form](https://forms.gle/fDZg9uQQqfxPVURX6) to express your interest to participate in the project and we will reach out to you.
@@ -19,14 +19,14 @@ The figure shows the expected outcomes and corresponding processing steps - most
 
 The steps are numbered and correspond to the sections below. The links direct you to the dedicated central ENIGMA-infra pages, which provide detailed instructions.
 
-## 1) Setting up Nipoppy: [Link to instructions]()
+## **1) Setting up Nipoppy: [Link to instructions]()**
 Nipoppy is a lightweight framework for standardized data organization and processing of neuroimaging-clinical datasets. Its goal is to help users adopt the [FAIR principles](https://www.go-fair.org/fair-principles/) and improve the reproducibility of studies. 
 
 The ongoing collaboration between the ENIGMA-PD team and Nipoppy team has streamlined data curation, processing, and analysis workflows, which significantly simplifies tracking of data availability, addition of new pipelines and upgrading of existing pipelines. The ENIGMA-Tremor and Nipoppy team is available to support and guide users through the process of implementing the framework, ensuring a smooth transition. To join the Nipoppy support community, we recommend joining their [Discord channel](https://discord.gg/dQGYADCCMB). Here you can ask questions and find answers while working with Nipoppy. 
 
 For more information, see the [Nipoppy documentation](https://nipoppy.readthedocs.io/en/stable/index.html).
 
-## 2a) Running FreeSurfer 7: [Link to instructions]()
+## **2a) Running FreeSurfer 7: [Link to instructions]()**
 When you reach this point, the hardest part is behind you and we can finally come to the real stuff. We will run FreeSurfer 7 through fMRIPrep using Nipoppy. See [here](https://nipoppy.readthedocs.io/en/latest/how_to_guides/user_guide/processing.html) for additional information about running processing pipelines with Nipoppy.
 
 ### Part 1: Cortical and subcortical segmentations
@@ -38,7 +38,7 @@ The subsegmentations pipeline is now ready to be run! Since you’ve all just be
 **About the pipeline:**
 This pipeline uses existing FreeSurfer 7 functionalities to extract subnuclei volumes from subcortical regions like the *thalamus*, *hippocampus*, *brainstem*, *hypothalamus*, *amygdala*, and *hippocampus*. It requires completed FreeSurfer output (`recon-all`) and integrates the subsegmentation outputs directly into the existing `/mri` and `/stats` directories. Additionally, the pipeline will perform [Sequence Adaptive Multimodal SEGmentation (SAMSEG)](https://surfer.nmr.mgh.harvard.edu/fswiki/Samseg) on T1w images in order to calculate a superior intracranial volume.
 
-## 2b) Quality Assessment: [Link to instructions]()
+## **2b) Quality Assessment: [Link to instructions]()**
 ### Part 1: Running the FS-QC toolbox
 Congratulations, you made it to the quality assessment! For this purpose, we will use FreeSurfer Quality Control (FS-QC) toolbox. The [FS-QC toolbox](https://github.com/Deep-MI/fsqc) takes existing FreeSurfer (or FastSurfer) output and computes a set of quality control metrics. These will be reported in a summary table and/or .html page with screenshots to allow for visual inspection of the segmentations.
 
@@ -49,11 +49,11 @@ Quality checking is essential to make sure the output that you have produced is 
 
 You can find the updated ENIGMA-PD QC instructions for visual inspection [here](../resources/ENIGMA-PD_visual_QC_instructions.md).
 
-## 3) Running the cerebellum segmentations using CerebNet
+## **3) Running the cerebellum segmentations using CerebNet**
 The protocol is being finalized and will be added soon!
 ![under-construction-sign-warning-sign-under-construction-yellow-triangle-sign-with-crossed-hammer-and-wrench-icon-inside-caution-at-the-construction-site-workers-machinery-and-other-obstacles-vector](https://github.com/user-attachments/assets/53a9e950-a9a8-4038-bd2c-8cec82df7844){ width="80" }
 
-## 4) Data sharing
+## **4) Data sharing**
 After completing all of the above steps, you're ready to share your derived data with the ENIGMA-Tremor core team. Please:
 
 - Review the .tsv and Excel spreadsheets for completeness, ensuring all participants are included, there are no missing or unexpected data points, and quality assessment scores have been assigned to each ROI and participant.
