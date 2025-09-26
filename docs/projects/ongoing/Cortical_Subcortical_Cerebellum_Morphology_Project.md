@@ -7,7 +7,7 @@ This page is created to guide collaborating ENIGMA-Tremor sites through this pro
 ## **Before you start**
 
 ### Expression of interest to participate with your site data
-Please fill out the [EOI form](https://forms.gle/fDZg9uQQqfxPVURX6) to express your interest to participate in the project and we will reach out to you.
+Please fill out the [EOI form](https://forms.gle/fDZg9uQQqfxPVURX6){:target="_blank"} to express your interest to participate in the project and we will reach out to you.
 
 ### Leaderboard
 To help monitor each site's progress, we maintain a leaderboard that outlines all the steps detailed in these guidelines. If you are in charge of data processing at your site, please request access and regularly update your progress on the current steps on the [ENIGMA-Tremor Leaderboard](https://docs.google.com/spreadsheets/d/1eYlLcxH7ET17Nr1wskm55SLVEqAoaBod_r1zIid9FSk/edit?usp=sharing).
