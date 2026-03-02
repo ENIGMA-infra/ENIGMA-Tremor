@@ -1,4 +1,4 @@
-# Welcome to the ENIGMA-infra FreeSurfer 7 guidelines!
+# Welcome to the ENIGMA CerebNet guidelines!
 
 ## Prerequisites
 This guide assumes that you have:
@@ -7,16 +7,22 @@ This guide assumes that you have:
 - [Apptainer available as container platform](../open_science_tools/container_platforms.md)
 
 ## Pull container
-We will apply the FreeSurfer functionalities that are included in the fMRIPrep pipeline. You can pull the fMRIPrep container in the following way:
+We will apply the cerebellum segmentation functionalities for [FastSurfer](https://www.sciencedirect.com/science/article/pii/S1053811920304985?via%3Dihub) and [Cerebnet](https://www.sciencedirect.com/science/article/pii/S1053811922008242?via%3Dihub) segmentation, a pipeline that has been developed by the ENIGMA-Ataxia working group. The original workflow can be found [here](https://hub.docker.com/r/phwegner/enigma). You can pull the CerebNet container in the following way:
 
+1. Create a cerebnet folder in the nipoppy container directory and enter:
 ```bash
-apptainer build fmriprep_24.1.1.sif \
-                    docker://nipreps/fmriprep:24.1.1
+cd /path/to/your/nipoppy/datasets/your_cohort/containers
+mkdir cerebnet
+cd cerebnet
 ```
-
-Make sure that you store the container in the containers folder that is [referenced in your global config file](../open_science_tools/container_platforms.md#storing-container-images).
-
-For more information on fMRIPrep, see the [fMRIPrep documentation](https://fmriprep.org/en/stable/).
+2. Pull the CerebNet container with Docker or Apptainer/Singularity. Make sure your system meets the requirements of FastSUrfer/Freesurfer. We recommend at least 16GB of RAM and 4 CPUs. FastSurfer will use a GPU when available. 
+```bash
+docker pull phwegner/enigma:latest
+```
+or 
+```bash
+singularity pull docker://phwegner/enigma:latest
+```
 
 ## Set up configuration
 Next, we will need to install the fMRIPrep pipeline within Nipoppy. You can do this by simply running:
