@@ -1,4 +1,4 @@
-# Welcome to the ENIGMA CerebNet guidelines!
+[prepare_input_cerebnet.sh](https://github.com/user-attachments/files/25695418/prepare_input_cerebnet.sh)# Welcome to the ENIGMA CerebNet guidelines!
 
 ## Prerequisites
 This guide assumes that you have:
@@ -6,7 +6,7 @@ This guide assumes that you have:
 - [installed Nipoppy and organized your data in BIDS](./setting_up_nipoppy.md)
 - [Apptainer available as container platform](../open_science_tools/container_platforms.md)
 
-## Pull container
+## Setup
 We will apply the cerebellum segmentation functionalities for [FastSurfer](https://www.sciencedirect.com/science/article/pii/S1053811920304985?via%3Dihub) and [Cerebnet](https://www.sciencedirect.com/science/article/pii/S1053811922008242?via%3Dihub) segmentation, a pipeline that has been developed by the ENIGMA-Ataxia working group. The original workflow can be found [here](https://hub.docker.com/r/phwegner/enigma). You can pull the CerebNet container in the following way:
 
 1. Create a cerebnet folder in the nipoppy container directory and enter:
@@ -24,47 +24,66 @@ or
 singularity pull docker://phwegner/enigma:latest
 ```
 
-## Set up configuration
-Next, we will need to install the fMRIPrep pipeline within Nipoppy. You can do this by simply running:
-
+3. The application expects the all T1w nifti files in the same input folder:
+base_folder
 ```bash
-nipoppy pipeline install --dataset <dataset_root> 15427833
+|----input  
+|        |----sub-001_T1w.nii.gz
+|        |----sub-002_T1w.nii.gz
+|        |----...
+|
+```
+Therefore we will create symlinks of the existing nifti files in the BIDS-folder to meet the input structure. Store [this script](https://github.com/ENIGMA-infra/ENIGMA-Tremor/blob/main/docs/resources/how_to_guides/prepare_input_cerebnet.sh) in your ```bash datasets/your_cohort/code folder ``` and make it executable by running ```bash chmod +x datasets/your_cohort/code folder/prepare_input_cerebnet.sh```. In addition, you have to adjust the following lines in the prepare_input_cerebnet.sh script to point to your directories:
+```bash
+BASE=/path/to/your/nipoppy/datasets	#your cohort directory e.g. /home/datasets
+BIDS=${BASE}/your_cohort/bids	#your cohort bids directory e.g. ${BASE}/Amsterdam/bids
+DEST=${BASE}/your_cohort/derivatives/cerebnet/input 	#your cerebnet input directory e.g. ${BASE}/Amsterdam/derivatives/cerebnet/input
 ```
 
-15427833 is the Zenodo ID for the Nipoppy configuration files for fmriprep 24.1.1. Read more about this step [here](./getting_ENIGMA-PD_pipeline_config_files.md).
+## Before you run the pipeline
+Prior to segmentation using this container, images should be checked for artefacts and quality. Artefacts or lesions that influence brain anatomy, and images with visible motion artefact (e.g., ripples in the T1w image) should be noted, although not necessarily immediately excluded unless severe. These images will require close visual QC after segmentation.
 
-Once the pipeline is installed, open the global config file and check whether the correct fMRIPrep version is included under `PIPELINE_VARIABLES`.
-The following paths should be replaced here under the correct version of the fMRIPrep pipeline in the global config file:
-- `<FREESURFER_LICENSE_FILE>` (required to run FreeSurfer; you can get a FreeSurfer licence for free at [the FreeSurfer website](https://surfer.nmr.mgh.harvard.edu/registration.html))
-- `<TEMPLATEFLOW_HOME>` (see [here](./Templateflow_info.md) for more info on Templateflow)
+Note that retrocerebellar arachnoid cysts are a common incidental finding in the general population. Although these are (unlikely) to be pathogenic, when large they will compress the cerebellum and result in non-representative volume estimates. Currently, we don’t have specific advice about how large is too large, but if there is clear deformation of the structure of the cerebellum, then these images should be excluded.
 
-## Run pipeline
-Finally, simply run the following line of code:
+## Run the pipeline
+Next, we will run the pipeline using Docker or Apptainer/Singularity, depending on your system:
+
+Docker
 ```bash
-nipoppy process --pipeline fmriprep --pipeline-version 24.1.1 --dataset <dataset_root>
+docker run -it --rm --user $(id -u):$(id -g) -v <YOUR_SUBJECTS_BASE_DIR>:/subjects_indir -v <YOUR_FS_LICENSE>:/license.txt phwegner/enigma
 ```
-This should initiate the FreeSurfer 7 segmentation of your T1-weighted images! You can also do a dry-run first by adding `--simulate` to your command. See all `nipoppy process` options [here](https://nipoppy.readthedocs.io/en/latest/cli_reference/process.html)
-
-**Note:** the command above will run all the participants and sessions in a loop, which may be inefficient. If you're using an HPC, you may want to submit a batch job to process all participants/sessions. Nipoppy can help you do this by:
-1. generating a list of "remaining" participants to be processed for your job-subission script: `nipoppy process --pipeline fmriprep --pipeline-version 24.1.1 --dataset <dataset_root> --write-list <path_to_participant_list>`
-2. automatically submitting HPC jobs for you with additional configuration (more info [here](https://nipoppy.readthedocs.io/en/latest/how_to_guides/parallelization/hpc_scheduler.html))
-
-### Track pipeline output
-The `nipoppy track-processing` command can help keep track of which participants/sessions have all the expected output files for a given processing pipeline. See [here](https://nipoppy.readthedocs.io/en/latest/how_to_guides/tracking/index.html) for more information. 
+Example for Docker:
 ```bash
-nipoppy track-processing --pipeline fmriprep --dataset <dataset_root>
+docker run -it --rm --user $(id -u):$(id -g) -v /home/datasets/Amsterdam/derivatives/cerebnet:/subjects_indir -v /home/software/freesurfer/license.txt:/license.txt phwegner/enigma
 ```
-Running this command will update the `processing_status.tsv` under the `derivatives` folder.
 
-## Extract pipeline output
-For automatic extraction of the cortical thickness, cortical surface area and subcortical volume into .tsv files, you can use another [Nipoppy pipeline](./getting_ENIGMA-PD_pipeline_config_files.md), called `fs_stats`. The Zenodo ID for this pipeline is 15427856, so you can install it with the following command:
+Singularity
 ```bash
-nipoppy pipeline install --dataset <dataset_root> 15427856
+singularity run -B <YOUR_SUBJECTS_BASE_DIR>:/subjects_indir -B <YOUR_FS_LICENSE>:/license.txt --pwd /fastsurfer <YOUR_CEREBNET_CONTAINER_DIR>/enigma_latest.sif
 ```
-Remember to define the freesurfer license file path in your global config file under the newly installed pipeline. Then, you can simply run 
+Example for Singularity:
 ```bash
-nipoppy extract --pipeline fs_stats --dataset <dataset_root>
+singularity run -B /home/datasets/Amsterdam/derivatives/cerebnet:/subjects_indir -B /home/software/freesurfer/license.txt:/license.txt --pwd /fastsurfer /home/datasets/Amsterdam/containers/cerebnet/enigma_latest.sif
 ```
-to get things going. You can find the extracted data under `<dataset_root>/derivatives/freesurfer/7.3.2/idp/`.
 
-Did you complete all FreeSurfer 7 processing and data extraction? Great job! You can now move on to the [subsegmentation](./freesurfer_subseg.md), or go straight to [quality control](./fsqc.md).
+If you get an error of the form: 'permission denied bash entrypoint.sh', replace the run command with: 
+```bash
+singularity exec -B <YOUR_SUBJECTS_BASE_DIR>:/subjects_indir -B <YOUR_FS_LICENSE>:/license.txt --pwd /fastsurfer <YOUR_CEREBNET_CONTAINER_DIR>/enigma_latest.sif /app/scripts/main.sh
+```
+
+## Generated output and quality control
+After running the container, the ‘outputs’ folder will contain a QC website (called ‘index.html’, in the ‘qc_webpage’ folder) and a file that flags potentially problematic scans (‘classifier_out_bad_scans.txt’). 
+
+1. Open the html file using a web browser, and examine each image segmentation to confirm alignment with the anatomical image. All images should be examined, not just those identified as bad scans. Extra scrutiny should be given to the bad scans and those flagged upon first visual inspection for motion or other artifacts.
+2. If in doubt, the segmentations should be loaded in an image viewer (e.g., freeview, FSLeyes, etc) and examined more closely. If the segmentations look accurate, the scan can be retained; otherwise, the scan should be marked for exclusion from subsequent analysis. Using freeview, run the following for the subject:
+```bash
+freeview \
+sub-3001_ses-1_T1w/fastsurfer/mri/orig/001.mgz \
+sub-3001_ses-1_T1w/fastsurfer/mri/cerebellum.CerebNet.nii.gz:colormap=lut:lut=/data/anw/anw-work/NP/projects/data_ENIGMA_Tremor/code/cerebnet/FreeSurferColorLUT.txt:opacity=0.4
+```
+<img width="1847" height="995" alt="freeview_cerebnet_qc" src="https://github.com/user-attachments/assets/73162cc4-190f-42b1-a668-623f3d20fdf7" />
+3. 
+
+```bash
+
+```
