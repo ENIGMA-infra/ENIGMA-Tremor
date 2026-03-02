@@ -2,7 +2,7 @@
 #Organizing required input structure for CerebNet
 #Creates symlinks of T1w nifti files from the bids directory
 
-BASE=/path/to/your/nipoppy/datasets	#your cohort directory e.g. /data/anw/anw-work/NP/projects/data_ENIGMA_Tremor/datasets
+BASE=/path/to/your/nipoppy/datasets	#your cohort directory e.g. /home/datasets
 BIDS=${BASE}/your_cohort/bids	#your cohort bids directory e.g. ${BASE}/Amsterdam/bids
 DEST=${BASE}/your_cohort/derivatives/cerebnet/input 	#your cerebnet input directory e.g. ${BASE}/Amsterdam/derivatives/cerebnet/input
 
