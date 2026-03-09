@@ -29,14 +29,13 @@ Before starting, ensure that you have:
 For clarity, we assume:
 
 ```
-BASE=/path/to/nipoppy/datasets
-COHORT=your_cohort
+NIPOPPY_DATASET="/path/to/your/nipoppy/datasets/your_cohort"
 ```
 
 Your dataset should follow:
 
 ```
-${BASE}/${COHORT}/
+${NIPOPPY_DATASET}/
 ├── bids/
 ├── derivatives/
 ├── containers/
@@ -46,26 +45,12 @@ ${BASE}/${COHORT}/
 ---
 
 # 1. Setup the CerebNet Container
+ #MAL ADJUST TO
+Set up configuration
+To get the Nipoppy specification files for the subsegmentation container, run:
 
-Navigate to your container directory:
-
-```bash
-cd ${BASE}/${COHORT}/containers
-mkdir cerebnet
-cd cerebnet
-```
-
-Pull the container:
-
-### Docker
-```bash
-docker pull phwegner/enigma:latest
-```
-
-### Apptainer / Singularity
-```bash
-singularity pull docker://phwegner/enigma:latest
-```
+nipoppy pipeline install --dataset <NIPOPPY_DATASET> 15877956 #ADJUST ID
+Read more about this step here.
 
 ---
 
@@ -84,29 +69,29 @@ We recommend creating symlinks from your BIDS directory.
 
 Download the helper script:
 
-[prepare_input_cerebnet.sh](https://github.com/ENIGMA-infra/ENIGMA-Tremor/blob/main/docs/resources/how_to_guides/prepare_input_cerebnet.sh)
+[prepare_input_cerebnet.sh](#LINK TO UPDATED CODE)
 
 Place it in:
 
 ```
-${BASE}/${COHORT}/code/
+${NIPOPPY_DATASET}/code/
 ```
 
 Make it executable:
 
 ```bash
-chmod +x ${BASE}/${COHORT}/code/prepare_input_cerebnet.sh
+chmod +x ${NIPOPPY_DATASET}/code/prepare_input_cerebnet.sh
 ```
 
 Edit the script and adjust:
 
 ```bash
-BASE=/path/to/nipoppy/datasets
-BIDS=${BASE}/${COHORT}/bids
-DEST=${BASE}/${COHORT}/derivatives/cerebnet/input
+SESSION_ID="<session_id_without_prefix>"
+
+NIPOPPY_DATASET="/path/to/your/nipoppy/datasets/your_cohort"
 ```
 
-Then run the script.
+Then run the script. Symlinks of the T1w scans will be placed in `${DERIVATIVES_DIR}/cerebnet/${CEREBNET_VERSION}/ses-${SESSION_ID}/input`
 
 ---
 
@@ -124,48 +109,26 @@ Retrocerebellar arachnoid cysts are common incidental findings. If large and cle
 
 Scans with mild artefacts may proceed but require careful QC after segmentation.
 
+Change global config file
+Open the global config file and add the path to your freesurfer license file under the freesurfer_subseg pipeline, just like you did for the fMRIPrep pipeline:
+
 ---
 
 # 4. Run the Pipeline
 
-## Docker
+`nipoppy process --pipeline cerebnet --dataset <NIPOPPY_DATASET> --session-id <session_id_without_prefix>`
 
-```bash
-docker run -it --rm \
---user $(id -u):$(id -g) \
--v ${BASE}/${COHORT}/derivatives/cerebnet:/subjects_indir \
--v /path/to/freesurfer/license.txt:/license.txt \
-phwegner/enigma
-```
-
-## Singularity / Apptainer
-
-```bash
-singularity run \
--B ${BASE}/${COHORT}/derivatives/cerebnet:/subjects_indir \
--B /path/to/freesurfer/license.txt:/license.txt \
---pwd /fastsurfer \
-${BASE}/${COHORT}/containers/cerebnet/enigma_latest.sif
-```
-
-If you receive:
-
-permission denied bash entrypoint.sh
-
-Use:
-
-```bash
-singularity exec \
--B ${BASE}/${COHORT}/derivatives/cerebnet:/subjects_indir \
--B /path/to/freesurfer/license.txt:/license.txt \
---pwd /fastsurfer \
-${BASE}/${COHORT}/containers/cerebnet/enigma_latest.sif \
-/app/scripts/main.sh
-```
+The container workflow: it runs the segmentations subject by subject, at the end concatenating the volumetric output across subjects and generating the QC images in the `outputs` folder. For our Amsterdam cohort the runtime per subject is 50-80 min (with 4 CPU cores and 16GB RAM), for 35 subjects 29-47 hours. For larger cohorts this operation may take multiple days to finish. We currently do not have a parallelization code available. Parallelization of the operation is challenging, because of the automatic serial nature of the operation and subsequent grouping of data. In case you need to submit a job please set `"ARRAY_CONCURRENCY_LIMIT": "1"`, so it runs only one task (again, running multiple task simultaneously unfortunately doesn't work). 
 
 ---
 
-# 5. Generated Output
+# 5. Track Progression
+
+`nipoppy track-processing --pipeline cerebnet --dataset <NIPOPPY_DATASET> --session-id <session_id_without_prefix>`
+
+---
+
+# 6. Generated Output
 
 After completion, the outputs/ folder contains:
 
@@ -175,7 +138,7 @@ After completion, the outputs/ folder contains:
 
 ---
 
-# 6. Quality Control (QC)
+# 7. Quality Control (QC)
 
 ## Step 1 — Web-based QC
 
@@ -244,7 +207,7 @@ If inaccurate → exclude or set appropriate regions to NA
 
 ---
 
-# 7. Troubleshooting
+# 8. Troubleshooting
 
 Permission Errors  
 Ensure your base directory is readable and writable.
@@ -263,7 +226,7 @@ apptainer cache clean
 
 ---
 
-# 8. Final Submission
+# 9. Final Submission
 
 After QC:
 
