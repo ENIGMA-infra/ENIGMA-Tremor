@@ -2,6 +2,6 @@
 
 <div class="grid cards" markdown>
 
--   :octicons-arrow-right-24: [CerebNet Cerebellum Segmentation Pipeline](./cerebnet.md)
+-   :octicons-arrow-right-24: [CerebNet-Cerebellum-Segmentation-Pipeline](./cerebnet.md)
 
 </div>
