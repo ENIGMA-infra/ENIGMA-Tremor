@@ -49,9 +49,8 @@ Quality checking is essential to make sure the output that you have produced is 
 
 You can find the updated ENIGMA-PD QC instructions for visual inspection [here](../resources/ENIGMA-PD_visual_QC_instructions.md){:target="_blank"}.
 
-## **3) Running the cerebellum segmentations using CerebNet**
-![under-construction-sign-warning-sign-under-construction-yellow-triangle-sign-with-crossed-hammer-and-wrench-icon-inside-caution-at-the-construction-site-workers-machinery-and-other-obstacles-vector](https://github.com/user-attachments/assets/53a9e950-a9a8-4038-bd2c-8cec82df7844){ width="80" }
-The protocol is being finalized and will be added soon!
+## **3) Running the cerebellum segmentations using CerebNet: [Link to instructions](https://enigma-infra.github.io/ENIGMA-Tremor/resources/how_to_guides/cerebnet){:target="_blank"}**
+The final processing step: the cerebellum pipeline is now ready to be run!
 
 ## **4) Data sharing**
 After completing all of the above steps, you're ready to share your derived data with the ENIGMA-Tremor core team. Please:
