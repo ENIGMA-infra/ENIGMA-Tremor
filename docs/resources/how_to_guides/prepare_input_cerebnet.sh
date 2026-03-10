@@ -2,21 +2,25 @@
 #Organizing required input structure for CerebNet
 #Creates symlinks of T1w nifti files from the bids directory
 
-BASE=/path/to/your/nipoppy/datasets	#your cohort directory e.g. /home/datasets
-BIDS=${BASE}/your_cohort/bids	#your cohort bids directory e.g. ${BASE}/Amsterdam/bids
-DEST=${BASE}/your_cohort/derivatives/cerebnet/input 	#your cerebnet input directory e.g. ${BASE}/Amsterdam/derivatives/cerebnet/input
+CEREBNET_VERSION="1.0"
+SESSION_ID="1" #adjust with your session ID without "ses-" 
 
-mkdir -p "${DEST}"
+NIPOPPY_DATASET="/path/to/your/nipoppy/datasets/cohort" #adjust with your path
+BIDS_DIR=${NIPOPPY_DATASET}/bids    #your dataset's bids directory 
+DERIVATIVES_DIR=${NIPOPPY_DATASET}/derivatives  #your dataset's derivatives directory 
+CEREBNET_INPUT_DIR=${DERIVATIVES_DIR}/cerebnet/${CEREBNET_VERSION}/ses-${SESSION_ID}/input    #your cerebnet input directory 
+
+mkdir -p "${CEREBNET_INPUT_DIR}"
 
 echo "Linking T1w files from:"
-echo "  ${BIDS}"
+echo "  ${BIDS_DIR}"
 echo "into:"
-echo "  ${DEST}"
+echo "  ${CEREBNET_INPUT_DIR}"
 echo
 
-find "${BIDS}" -type f -name "*_T1w.nii.gz" | sort | while read -r f; do
+find "${BIDS_DIR}" -type f -name "*_T1w.nii.gz" | sort | while read -r f; do
     fname=$(basename "$f")
-    target="${DEST}/${fname}"
+    target="${CEREBNET_INPUT_DIR}/${fname}"
 
     if [[ -e "${target}" ]]; then
         existing=$(readlink -f "${target}")
