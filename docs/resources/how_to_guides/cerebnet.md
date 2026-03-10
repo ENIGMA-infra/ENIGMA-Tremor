@@ -46,23 +46,16 @@ ${NIPOPPY_DATASET}/
 
 # 1. Setup the CerebNet Container
 
-## Pull Container
-You need to download the container image that will run the subsegmentations. Use the following Apptainer command to pull the image from Docker Hub:
-
-```
-apptainer build enigma_latest.sif docker://phwegner/enigma:latest
-```
-
-Make sure the resulting image file is stored in the container directory [referenced in your global config file](https://enigma-infra.github.io/resources/open_science_tools/container_platforms/#storing-container-images).
-
-## Set Up Configuration
-To get the Nipoppy specification files for the cerebnet container, run:
+## Pull Container and Set Up Configuration
+To get the CerebNet container and Nipoppy specification files, run:
 
 ```
 nipoppy pipeline install --dataset <NIPOPPY_DATASET> 18930124
 ```
 
-18930124 is the Zenodo ID for the Nipoppy configuration files for Cerebnet. Read more about this step [here](https://enigma-infra.github.io/resources/how_to_guides/getting_ENIGMA-PD_pipeline_config_files/).
+When the message `This pipeline is containerized: do you want to download the container?` pops up, press `y` and enter to download the container SIF image in your `datasets/<cohort>/container folder`.
+
+`18930124` is the Zenodo ID for the Nipoppy configuration files for Cerebnet. Read more about this step [here](https://enigma-infra.github.io/resources/how_to_guides/getting_ENIGMA-PD_pipeline_config_files/).
 
 ## Change Global Config File
 Open the global config file and add the path to your freesurfer license file under the cerebnet pipeline, just like you did for the fMRIPrep and freesurfer_subseg pipelines.
@@ -159,6 +152,8 @@ Example:
 nipoppy process --pipeline cerebnet --dataset /path/to/datasets/Amsterdam --session-id 1
 ```
 
+You can find more information about running pipelines [here](https://nipoppy.readthedocs.io/en/latest/how_to_guides/pipeline_run/index.html).
+
 ## Container workflow
 
 The container workflow processes the segmentations subject-by-subject. After all subjects have been processed, the pipeline concatenates the volumetric outputs across subjects and generates the QC images in the `outputs` folder.
@@ -179,7 +174,7 @@ This ensures that only one task runs at a time. Running multiple tasks simultane
 
 # 5. Track Pipeline Output
 
-Use the `nipoppy track-processing` command to check which participants/sessions have complete output:
+Use the [`nipoppy track-processing`](https://nipoppy.readthedocs.io/en/latest/how_to_guides/tracking/index.html#processing-pipelines) command to check which participants/sessions have complete output:
 
 ```
 nipoppy track-processing --pipeline cerebnet --dataset <NIPOPPY_DATASET> --session-id <session_id_without_prefix>
