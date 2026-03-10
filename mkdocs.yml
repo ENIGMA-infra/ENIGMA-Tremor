@@ -25,7 +25,7 @@ nav:
 
   - Resources:
     - How-to guides: resources/how_to_guides/overview.md
-      - CerebNet: resources/how_to_guides/cerebnet.md
+    - CerebNet: resources/how_to_guides/cerebnet.md
     - Tools: resources/tools/overview.md
 
 
