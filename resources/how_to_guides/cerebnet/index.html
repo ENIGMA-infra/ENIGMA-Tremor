@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../../tools/overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logos/enigma_300DPI_small.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>CerebNet - ENGIMA-Tremor Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welcome-to-the-enigma-cerebnet-guidelines" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ENGIMA-Tremor Documentation" class="md-header__button md-logo" aria-label="ENGIMA-Tremor Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logos/enigma_300DPI_small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ENGIMA-Tremor Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CerebNet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ENGIMA-Tremor Documentation" class="md-nav__button md-logo" aria-label="ENGIMA-Tremor Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logos/enigma_300DPI_small.png" alt="logo">
+
+    </a>
+    ENGIMA-Tremor Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About ENIGMA-Tremor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About ENIGMA-Tremor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../working_group/team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../working_group/existing_sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../working_group/join_us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Join us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/ongoing/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ongoing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/completed/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Completed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/propose_a_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propose a project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CerebNet
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CerebNet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assumed-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assumed Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assumed-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assumed Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="welcome-to-the-enigma-cerebnet-guidelines">Welcome to the ENIGMA CerebNet guidelines!</h1>
+<h2 id="overview">Overview</h2>
+<p>This protocol describes how to:</p>
+<ol>
+<li>Prepare T1-weighted MRI scans for CerebNet segmentation  </li>
+<li>Run the ENIGMA CerebNet container (<a href="https://www.sciencedirect.com/science/article/pii/S1053811920304985?via%3Dihub">FastSurfer</a> + <a href="https://www.sciencedirect.com/science/article/pii/S1053811922008242?via%3Dihub">Cerebnet</a>) in Nipoppy</li>
+<li>Perform quality control (QC)  </li>
+<li>Prepare outputs for submission  </li>
+</ol>
+<p>This workflow adapts the <a href="https://hub.docker.com/r/phwegner/enigma">ENIGMA CerebNet container developed by the ENIGMA-Ataxia working group</a>.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before starting, ensure that you have:</p>
+<ul>
+<li><a href="./setting_up_nipoppy.md">installed Nipoppy and organized your data in BIDS</a></li>
+<li><a href="../open_science_tools/container_platforms.md">Apptainer available as container platform</a> </li>
+<li>A valid FreeSurfer license file  </li>
+<li>Recommendation: 16 GB RAM and 4 CPUs available  </li>
+</ul>
+<hr />
+<h2 id="assumed-directory-structure">Assumed Directory Structure</h2>
+<p>For clarity, we assume:</p>
+<pre><code>NIPOPPY_DATASET=&quot;/path/to/your/nipoppy/datasets/cohort&quot;
+</code></pre>
+<p>Your dataset should follow:</p>
+<pre><code>${NIPOPPY_DATASET}/
+├── bids/
+├── derivatives/
+├── containers/
+└── code/
+</code></pre>
+<hr />
+<h1 id="1-setup-the-cerebnet-container">1. Setup the CerebNet Container</h1>
+<h2 id="pull-container-and-set-up-configuration">Pull Container and Set Up Configuration</h2>
+<p>To get the CerebNet container and Nipoppy specification files, run:</p>
+<pre><code>nipoppy pipeline install --dataset &lt;NIPOPPY_DATASET&gt; 18930124
+</code></pre>
+<p>When the message <code>This pipeline is containerized: do you want to download the container?</code> pops up, press <code>y</code> and enter to download the container SIF image in your <code>datasets/&lt;cohort&gt;/container folder</code>.</p>
+<p><code>18930124</code> is the Zenodo ID for the Nipoppy configuration files for Cerebnet. Read more about this step <a href="https://enigma-infra.github.io/resources/how_to_guides/getting_ENIGMA-PD_pipeline_config_files/">here</a>.</p>
+<h2 id="change-global-config-file">Change Global Config File</h2>
+<p>Open the global config file and add the path to your freesurfer license file under the cerebnet pipeline, just like you did for the fMRIPrep and freesurfer_subseg pipelines.</p>
+<pre><code>            &quot;fsqc&quot;: {
+                &quot;2.1.1&quot;: {
+                    &quot;FREESURFER_VERSION&quot;: &quot;7.3.2&quot;
+                }
+            },
+            &quot;freesurfer_subseg&quot;: {
+                &quot;1.0&quot;: {
+                    &quot;FREESURFER_LICENSE_FILE&quot;: &quot;/path/to/licence/file/license.txt&quot;
+                }
+            },
+            &quot;cerebnet&quot;: {
+                &quot;1.0&quot;: {
+                    &quot;FREESURFER_LICENSE_FILE&quot;: &quot;/path/to/licence/file/license.txt&quot;
+                }
+            }
+        },
+</code></pre>
+<p>Final check
+Before trying to run the pipeline, confirm that the pipeline is recognized by running <code>nipoppy pipeline list</code>. This will print a list of the available pipelines.</p>
+<hr />
+<h1 id="2-prepare-input-data">2. Prepare Input Data</h1>
+<p>The container expects all T1w nifti files in a single input folder:</p>
+<pre><code>&lt;cohort&gt;/derivatives/cerebnet/&lt;version&gt;/&lt;session_id&gt;/input #e.g. Amsterdam/derivatives/cerebnet/1.0/ses-1/input
+├── sub-001_T1w.nii.gz
+├── sub-002_T1w.nii.gz
+└── ...
+</code></pre>
+<p>We recommend creating symlinks from your BIDS directory.</p>
+<p>Download the helper script:</p>
+<p><a href="https://github.com/ENIGMA-infra/ENIGMA-Tremor/blob/maxlaansma-cerebnet-protocol/docs/resources/how_to_guides/prepare_input_cerebnet.sh">prepare_input_cerebnet.sh</a></p>
+<p>Place it in:</p>
+<p><code>${NIPOPPY_DATASET}/code/</code></p>
+<p>Make it executable:</p>
+<pre><code>chmod +x ${NIPOPPY_DATASET}/code/prepare_input_cerebnet.sh
+</code></pre>
+<p>Edit the script and adjust:</p>
+<pre><code>SESSION_ID=&quot;&lt;session_id_without_prefix&gt;&quot;
+
+NIPOPPY_DATASET=&quot;/path/to/your/nipoppy/datasets/cohort&quot;
+</code></pre>
+<p>Then run the script. Symlinks of the T1w scans will be placed in <code>${DERIVATIVES_DIR}/cerebnet/${CEREBNET_VERSION}/ses-${SESSION_ID}/input</code></p>
+<hr />
+<h1 id="3-before-running-the-pipeline">3. Before Running the Pipeline</h1>
+<p>All T1w images must be visually inspected prior to segmentation.</p>
+<p>Inspect for:</p>
+<ul>
+<li>Missing parts of the cerebellum due to a limited field of view</li>
+<li>Severe motion artefacts (e.g., ripples)</li>
+<li>Large lesions affecting cerebellar anatomy</li>
+<li>Strong deformation of the cerebellum</li>
+</ul>
+<p>Retrocerebellar arachnoid cysts are common incidental findings. If large and clearly deforming cerebellar anatomy, exclude the scan from analysis.</p>
+<p>Scans with mild artefacts may proceed but require careful QC after segmentation.</p>
+<hr />
+<h1 id="4-run-the-pipeline">4. Run the Pipeline</h1>
+<pre><code>nipoppy process --pipeline cerebnet --dataset &lt;NIPOPPY_DATASET&gt; --session-id &lt;session_id_without_prefix&gt;
+</code></pre>
+<p>Example:</p>
+<pre><code>nipoppy process --pipeline cerebnet --dataset /path/to/datasets/Amsterdam --session-id 1
+</code></pre>
+<p>You can find more information about running pipelines <a href="https://nipoppy.readthedocs.io/en/latest/how_to_guides/pipeline_run/index.html">here</a>.</p>
+<h2 id="container-workflow">Container workflow</h2>
+<p>The container workflow processes the segmentations subject-by-subject. After all subjects have been processed, the pipeline concatenates the volumetric outputs across subjects and generates the QC images in the <code>outputs</code> folder.</p>
+<p>For our Amsterdam cohort, the runtime per subject is approximately 50-80 minutes (using 4 CPU cores and 16 GB RAM). For a dataset of 35 subjects, the total runtime is approximately 29-47 hours. For larger cohorts, the workflow may take multiple days to complete.</p>
+<p>Currently, parallel execution is not supported. Parallelization is difficult due to the inherently serial nature of the processing steps and the subsequent grouping and concatenation of outputs across subjects.</p>
+<p>If you need to submit the workflow as a job, please set in <code>datasets/&lt;cohort&gt;/pipelines/processing/cerebnet-1.0/hpc.json</code>:</p>
+<pre><code class="language-json">&quot;ARRAY_CONCURRENCY_LIMIT&quot;: &quot;1&quot;
+</code></pre>
+<p>This ensures that only one task runs at a time. Running multiple tasks simultaneously is unfortunately not supported and may cause the workflow to fail. <a href="https://nipoppy.readthedocs.io/en/latest/how_to_guides/parallelization/hpc_scheduler.html">Here you can find more info on submitting HPC jobs</a>. </p>
+<hr />
+<h1 id="5-track-pipeline-output">5. Track Pipeline Output</h1>
+<p>Use the <a href="https://nipoppy.readthedocs.io/en/latest/how_to_guides/tracking/index.html#processing-pipelines"><code>nipoppy track-processing</code></a> command to check which participants/sessions have complete output:</p>
+<pre><code>nipoppy track-processing --pipeline cerebnet --dataset &lt;NIPOPPY_DATASET&gt; --session-id &lt;session_id_without_prefix&gt;
+</code></pre>
+<p>This helps you confirm whether the pipeline ran successfully across your dataset (also see <code>processing_status.tsv</code> under the <code>derivatives</code> folder).</p>
+<hr />
+<h1 id="6-generated-output">6. Generated Output</h1>
+<p>After completion, the outputs/ folder contains:</p>
+<ul>
+<li>qc_webpage/index.html → visual QC interface  </li>
+<li>classifier_out_bad_scans.txt → automated QC flags  </li>
+<li>volumes_all.csv → segmentation volumes  </li>
+</ul>
+<hr />
+<h1 id="7-quality-control-qc">7. Quality Control (QC)</h1>
+<h2 id="step-1-web-based-qc">Step 1 — Web-based QC</h2>
+<p>Create a QC-adjusted file (copy of <code>outputs/volumes_all.csv</code>) to mark segmentation failure with <code>NA</code>:</p>
+<p><code>outputs/volumes_all_qc.csv</code></p>
+<p>Open:</p>
+<p><code>outputs/qc_webpage/index.html</code></p>
+<p>Inspect all subjects, not only those flagged as problematic.</p>
+<p>For anatomical label reference, consult the figure below from the original 
+<a href="https://www.sciencedirect.com/science/article/pii/S1053811922008242?via%3Dihub">CerebNet publication</a>. 
+This figure provides an overview of the cerebellar lobular definitions used in the segmentation.</p>
+<p>For interactive inspection of labels, see Step 2. When loading the segmentation in Freeview, you can hover over individual voxels to display the label name and move through the axial, sagittal, and coronal planes.</p>
+<p><img width="704" height="145" alt="cerebnet_labels" src="https://github.com/user-attachments/assets/9a37624a-7846-4971-9957-0dc1384e8517" /></p>
+<p>QC Checklist:</p>
+<ul>
+<li>Segmentation aligns with cerebellar anatomy  </li>
+<li>No major boundary leakage into the occipital cortex, brainstem, vessels and meninges  </li>
+<li>Lobular boundaries appear anatomically plausible    </li>
+<li>No gross segmentation failure  </li>
+</ul>
+<p>If regional failure → mark that region as NA<br />
+If global failure → mark all regions as NA  </p>
+<hr />
+<h2 id="rendering-distortion-issue">Rendering Distortion Issue</h2>
+<p>On some systems, QC images may appear distorted due to rendering issues. This does not indicate segmentation failure.</p>
+<p>If distortion occurs, proceed to manual inspection using an image viewer (Step 2).</p>
+<p><img width="256" height="256" alt="3" src="https://github.com/user-attachments/assets/cec71511-d98d-4692-9642-79e169cc5f66" /></p>
+<hr />
+<h2 id="step-2-manual-inspection">Step 2 — Manual Inspection</h2>
+<p>Load the segmentation in Freeview:</p>
+<pre><code class="language-bash">freeview \
+${BASE}/${COHORT}/derivatives/cerebnet/outputs/&lt;subject&gt;/fastsurfer/mri/orig/001.mgz \
+${BASE}/${COHORT}/derivatives/cerebnet/outputs/&lt;subject&gt;/fastsurfer/mri/cerebellum.CerebNet.nii.gz:colormap=lut:lut=${BASE}/${COHORT}/code/FreeSurferColorLUT.txt:opacity=0.4
+</code></pre>
+<p>Ensure you use a <a href="https://github.com/Deep-MI/FastSurfer/blob/dev/FastSurferCNN/config/FreeSurferColorLUT.txt">recent FreeSurferColorLUT.txt</a> that includes CerebNet labels.</p>
+<p>If segmentation appears accurate → retain<br />
+If inaccurate → exclude or set appropriate regions to NA  </p>
+<p><img width="1847" height="995" alt="freeview_cerebnet_qc" src="https://github.com/user-attachments/assets/73162cc4-190f-42b1-a668-623f3d20fdf7" /></p>
+<hr />
+<h1 id="8-troubleshooting">8. Troubleshooting</h1>
+<p>Permission Errors<br />
+Ensure your base directory is readable and writable.</p>
+<p>SLURM Jobs<br />
+Ensure ≥16GB memory allocation.</p>
+<p>Apptainer Cache Filling Home Directory  </p>
+<pre><code class="language-bash">apptainer cache clean
+</code></pre>
+<hr />
+<h1 id="9-final-submission">9. Final Submission</h1>
+<p>After QC prepare:
+- send_to_dzne.zip
+  - Include QC snapshots if they are permitted to be shared under your local data governance regulations.<br />
+  - If QC images cannot be shared, exclude the <code>qc_webpage</code> folder and include all other output files in the archive.
+- volumes_all_qc.csv  </p>
+<p>Submit according to:
+https://enigma-infra.github.io/ENIGMA-Tremor/projects/ongoing/Cortical_Subcortical_Cerebellum_Morphology_Project/</p>
+<hr />
+<h1 id="contact">Contact</h1>
+<p>For questions regarding QC or technical issues:</p>
+<p>Max Laansma<br />
+m.laansma@amsterdamumc.nl</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
