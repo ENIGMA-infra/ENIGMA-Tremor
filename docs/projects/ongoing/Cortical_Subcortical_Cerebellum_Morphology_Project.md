@@ -50,10 +50,7 @@ You can find the updated ENIGMA-PD QC instructions for visual inspection [here](
 ## **3) Running the cerebellum segmentations using CerebNet: [Link to instructions](https://enigma-infra.github.io/ENIGMA-Tremor/resources/how_to_guides/cerebnet){:target="_blank"}**
 The final processing step: the cerebellum pipeline is now ready to be run!
 
-## **4) Data sharing**
-After completing all of the above steps, you're ready to share your derived data with the ENIGMA-Tremor core team. Please:
+## **4) Data sharing: [Link to instructions](https://enigma-infra.github.io/ENIGMA-Tremor/resources/how_to_guides/data_sharing){:target="_blank"}**
+After completing all of the above steps, you're ready to share your derived data with the ENIGMA-Tremor core team!
 
-- Review the .tsv and Excel spreadsheets for completeness, ensuring all participants are included, there are no missing or unexpected data points, and quality assessment scores have been assigned to each ROI and participant.
-- Confirm whether you are authorized to share the quality check .png files. These will be used, along with your quality assessment scores, to help train automated machine learning models for ENIGMA's quality checking pipelines, to eliminate the need for manual checking in the future.
-
-Once these checks are complete, email m.laansma@amsterdamumc.nl to receive instructions for uploading the .csv files and, if applicable, the QA .png files, via SFTP to our central storage on the LONI server hosted by USC.
+Email m.laansma@amsterdamumc.nl to receive the upload details for the SFTP to our central storage on the LONI server, hosted by USC.
