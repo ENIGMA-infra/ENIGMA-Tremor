@@ -70,9 +70,9 @@ Quality control output (3 spreadsheet, optionally .png files)
 
 ## Data sharing protocol
 
-### Using personalized upload credentials
+### Secure File Transfer Protocol (SFTP)
 
-Important: This upload method uses a shared account, with with an updated one-time password for each site data upload. After upload the site data will be transfered to the ENIGMA-Tremor central repository, only accessible by the ENIGMA-Tremor core team. To receive the username and your unique one-time password, please email Max Laansma at m.laansma@amsterdamumc.nl.
+Important: This upload method uses a shared account, with an updated one-time password for each site data upload. The site data will then be moved to the ENIGMA-Tremor central repository, accessible only by the ENIGMA-Tremor core team. To receive the user details and your unique one-time password, please email Max Laansma at m.laansma@amsterdamumc.nl.
 
 #### Option 1: Upload via graphical interface, for example Filezilla or WinSCP (drag-and-drop)
 Open your preferred tool and connect using the following details:
