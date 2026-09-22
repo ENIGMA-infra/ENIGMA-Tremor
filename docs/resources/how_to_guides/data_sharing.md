@@ -3,7 +3,7 @@
 ## Important things to consider
 Once you have completed all the [project steps](https://enigma-infra.github.io/ENIGMA-Tremor/projects/ongoing/Cortical_Subcortical_Cerebellum_Morphology_Project/), your derived data is ready to be shared with USC, where it will be accessible to the ENIGMA-Tremor core team. All data will remain on the USC server. Before transferring, please take the following steps:
 
-- **Review the .tsv and Excel files to confirm completeness**. Verify that all participants are included, there are no missing or unexpected values, and that quality assessment scores have been assigned to each ROI and participant.
+- **Review the .tsv, .csv and Excel files to confirm completeness**. Verify that all participants are included, there are no missing or unexpected values, and that quality assessment scores have been assigned to each ROI and participant.
 - Determine whether you are authorized to share the **quality control .png files**. These images, together with your quality assessment scores, will be used to train automated machine learning models for ENIGMA's quality checking pipelines, with the goal of reducing the need for manual review in the future.
 
 ## Data to be shared
@@ -30,9 +30,19 @@ From: `<dataset_root>/derivatives/freesurfer_subseg/1.0/idp/fs_subseg_stats-0.2/
 - Subsegmentations: `subsegmentation_volumes.tsv`
 
 
-CerebNet output (1 spreadsheet)
+CerebNet output (1 spreadsheet; 4 text files)
 
-- 
+From: `<dataset_root>/derivatives/cerebnet/1.0/ses-1/outputs/`
+
+- Volume: `volumes_all.csv`
+
+- `classifier_out.txt`
+
+- `classifier_out_bad_scans.txt`
+
+- `outliers_{all}.txt`
+
+- `outliers_{any}.txt`
 
 
 Quality control output (3 spreadsheet, optionally .png files)
@@ -44,6 +54,16 @@ Quality control output (3 spreadsheet, optionally .png files)
 - Cerebellum quality assessment scores
 
 - Quality control .png files (if authorized)
+
+  - FreeSurfer cortical & subcortical: from `<dataset_root>/derivatives/fsqc/2.1.4/output/ses-1/` the `screenshots` and `surfaces` folders, and the `fsqc-results.html` file:
+
+    -  `screenshots/`
+
+    -  `surfaces/`
+
+    -  `fsqc-results.html`
+
+  - Cerebellum: the complete `qc_webpage` folder `<dataset_root>/derivatives/cerebnet/1.0/ses-1/outputs/qc_webpage/`
 
 ### Clinical and Demographic Data
 - 1 [spreadsheet](https://docs.google.com/spreadsheets/d/1e21lov4f4-Ga6_AzvAvR38kRVTY2FfpS/edit?usp=sharing&ouid=106661288570625862890&rtpof=true&sd=true) containing clinical and demographic variables for all participants
