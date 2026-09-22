@@ -85,16 +85,16 @@ Open your preferred tool and connect using the following details:
 
 - Port: (request via m.laansma@amsterdamumc.nl)
 
-Once connected, you should be in `/ftp/enigma_tremor/`. Find the folder prepared for your site (e.g. AMS) and drag and drop your files into it.
+Once connected, you should be in `/ftp/`. Find the folder prepared for your site (e.g. `enigma_tremor/Amsterdam/`) and drag and drop your files into it.
 
 #### Option 2: Upload via command line
 Open a terminal and log on to the USC server (request log-in details via m.laansma@amsterdamumc.nl)
 
-This places you in `/ftp/enigma_tremor/`. Navigate to the folder prepared for your site, for example:
-`cd AMS`
+This places you in `/ftp/`. Navigate to the folder prepared for your site, for example:
+`cd enigma_tremor/Amsterdam/`
 
-Upload a single file: `put AMS.tsv`
-Upload a folder: `put -r AMS`
+Upload a single file: `put /path/to/file/Amsterdam.tsv`
+Upload a folder: `put -r /path/to/folder/Amsterdam`
 
 **Note:**
 When logging in, you might get an error that looks like this:
