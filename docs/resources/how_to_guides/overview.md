@@ -4,6 +4,6 @@
 
 -   :octicons-arrow-right-24: [__CerebNet-Cerebellum-Segmentation-Pipeline__](./cerebnet.md)
 
--   :octicons-arrow-right-24: [__How to share your data__](how_to_guides/data_sharing.md)
+-   :octicons-arrow-right-24: [__How to share your data__](./data_sharing.md)
 
 </div>
